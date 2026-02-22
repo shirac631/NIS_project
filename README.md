@@ -3,6 +3,9 @@ Web Project
 This project was developed as part of our studies at **The Academic College of Tel-Aviv, Yaffo**. 
 The name **NIS** represents the initials of the project partners: **Noam, Inbar, and Shira**.
 
+You can access the live website here: 
+[http://vmedu431.mtacloud.co.il:4000](http://vmedu431.mtacloud.co.il:4000)
+
 ## 👥 Meet the Team
 * **Shira**
 * **Noam**
