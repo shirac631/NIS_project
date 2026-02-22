@@ -1,0 +1,45 @@
+.custom-modal {
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    background-color: #fcfcfc;
+}
+
+.modal-icon-wrapper {
+    font-size: 4rem;
+    color: #d4a373; 
+}
+
+.modal-title-custom {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    font-weight: 700;
+}
+
+.modal-text-custom {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.btn-modal-action {
+    background-color: #d4a373;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-modal-action:hover {
+    background-color: #bc8a5f;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(212, 163, 115, 0.4);
+}
+
+.modal-error .modal-icon-wrapper {
+    color: #e74c3c;
+}
+.modal-error .btn-modal-action {
+    background-color: #e74c3c;
+}

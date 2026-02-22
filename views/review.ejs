@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NIS Restaurant | ביקורות והמלצות</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/popup.css">
+    <link rel="stylesheet" href="/css/review.css">
+</head>
+
+<body>
+
+    <%- include('includes/header', { isLoggedIn: isLoggedIn, user: user }) %>
+    <%- include('includes/navbar') %>
+
+    <div class="content-wrapper">
+        <main class="main review-main">
+            <div class="review-hero">
+                <h1 class="review-title">ביקורות והמלצות סועדים</h1>
+                <p class="review-subtitle">
+                    נשמח לשמוע איך היה לכם אצלנו 💛 זה עוזר לנו להשתפר וגם עוזר לסועדים אחרים לבחור!
+                </p>
+            </div>
+
+            <section class="review-card">
+                <h2 class="review-card-title">השאירו ביקורת</h2>
+
+            <form id="reviewForm" class="review-form" method="POST" action="http://noamvi.mtacloud.co.il/includes/php/review.php" novalidate>
+
+                    <div class="form-row">
+                        <label for="visitor_name" class="form-label">שם הסועד</label>
+                        <input
+                            type="text"
+                            id="visitor_name"
+                            name="visitor_name"
+                            class="form-control"
+                            placeholder="לדוגמה: ענבר"
+                            required
+                            minlength="2"
+                            maxlength="40"
+                            pattern="^[\u0590-\u05FFa-zA-Z\s]{2,40}$"
+                        />
+                        <small class="help-text">מותר אותיות בעברית/אנגלית ורווחים (2–40 תווים).</small>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="visit_date" class="form-label">מתי אכלתם אצלנו?</label>
+                        <input
+                            type="date"
+                            id="visit_date"
+                            name="visit_date"
+                            class="form-control"
+                            required
+                        />
+                        <small class="help-text">לא ניתן לבחור תאריך עתידי.</small>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="rating" class="form-label">דירוג (1–5 כוכבים)</label>
+                        <select id="rating" name="rating" class="form-select" required>
+                            <option value="" selected disabled>בחרו דירוג</option>
+                            <option value="1">1 ⭐</option>
+                            <option value="2">2 ⭐⭐</option>
+                            <option value="3">3 ⭐⭐⭐</option>
+                            <option value="4">4 ⭐⭐⭐⭐</option>
+                            <option value="5">5 ⭐⭐⭐⭐⭐</option>
+                        </select>
+
+                        <div class="stars-preview" aria-hidden="true">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <span id="starsText" class="stars-text"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <label class="form-label">מה הכי אהבתם?</label>
+                        <div class="chips" id="categoryChips">
+                            <label class="chip">
+                                <input type="radio" name="category" value="שירות" required>
+                                <span>שירות</span>
+                            </label>
+                            <label class="chip">
+                                <input type="radio" name="category" value="אוכל" required>
+                                <span>אוכל</span>
+                            </label>
+                            <label class="chip">
+                                <input type="radio" name="category" value="אווירה" required>
+                                <span>אווירה</span>
+                            </label>
+                        </div>
+                        <small class="help-text">בחרו קטגוריה אחת .</small>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="comment" class="form-label">הביקורת שלכם</label>
+                        <textarea
+                            id="comment"
+                            name="comment"
+                            class="form-control"
+                            rows="5"
+                            placeholder="ספרו לנו איך היה... (לפחות 20 תווים)"
+                            required
+                            minlength="20"
+                            maxlength="500"
+                        ></textarea>
+                        <div class="textarea-footer">
+                            <small class="help-text">מינימום 20 תווים, מקסימום 500.</small>
+                            <small class="char-counter"><span id="charCount">0</span>/500</small>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="recommend_dish" class="form-label">מנה מומלצת (אופציונלי)</label>
+                        <input
+                            type="text"
+                            id="recommend_dish"
+                            name="recommend_dish"
+                            class="form-control"
+                            placeholder="לדוגמה: פסטה שמנת פטריות"
+                            maxlength="80"
+                        />
+                        <small class="help-text">
+                            אם דירוג 4–5, נבקש שתוסיפו המלצת מנה 🙂 
+                        </small>
+                    </div>
+
+                    <div class="actions">
+                        <button type="submit" class="btn-submit">
+                            שלח/י ביקורת <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                        <button type="reset" class="btn-reset">
+                            ניקוי טופס <i class="fa-solid fa-rotate-left"></i>
+                        </button>
+                    </div>
+
+                    <div class="form-note">
+                        <i class="fa-solid fa-circle-info"></i>
+                        <span>הביקורת תפורסם לאחר אישור המערכת. נשמור על פרטיותכם ולא נפרסם פרטים מזהים.</span>
+                    </div>
+
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <%- include('includes/footer') %>
+    <%- include('includes/popup') %>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script src="/js/global.js"></script>
+    <script src="/js/review.js"></script>
+
+</body>
+</html>

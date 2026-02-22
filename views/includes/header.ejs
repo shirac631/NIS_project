@@ -1,0 +1,17 @@
+<header class="header">
+    <img src="/pictures/logo.jpg" alt="NIS Restaurant Logo" class="logo-image">
+    
+    <div class="user-controls">
+        <span id="user-greeting" class="user-greeting">
+            <%= isLoggedIn ? 'שלום ' + user.firstName : 'שלום אורח' %>
+        </span>
+
+        <% if (isLoggedIn) { %>
+            <a href="/logout" id="logout-link" class="logout-btn">התנתק</a>
+        <% } %>
+    </div>
+
+    <div class="slogan">
+        <h3>NIS | Coffee & Good Vibes</h3>
+    </div>
+</header>

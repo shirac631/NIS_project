@@ -1,0 +1,242 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-image: url("/pictures/background.jpeg");
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    direction: rtl;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header, .nav, .content-wrapper, .footer {
+    max-width: 1000px;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header, .nav, .footer, .main, .sidebar, .menu-section, .login-container-box {
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 15px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 110px;
+    margin-top: 20px;
+    position: relative; 
+    padding: 0 20px;
+}
+
+.logo-image {
+    height: 90%;
+    width: auto;
+    display: block;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.user-controls {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    margin-right: 20px;
+    flex-shrink: 0; 
+}
+
+.user-greeting {
+    font-size: 15px;
+    font-weight: bold;
+    color: #8B5A2B;
+    white-space: nowrap;
+}
+
+.logout-btn {
+    text-decoration: none;
+    color: #a94442 !important;
+    border: 1px solid #a94442;
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    background-color: white;
+}
+
+.logout-btn:hover {
+    background-color: #a94442;
+    color: white !important;
+}
+
+.slogan {
+    margin-right: auto; 
+    padding: 0 20px;
+    color: #8B5A2B;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;     
+    height: auto;
+    margin-top: 15px;
+    padding: 10px 15px;
+    gap: 10px;
+}
+
+.nav-links {
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 12px;
+    font-size: 16px;
+    color: #8B5A2B;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px; 
+}
+
+.nav-links[title] {
+    font-size: 20px; 
+}
+
+.nav-links:hover {
+    background-color: #f5e6d3;
+    color: #5d3a1a;
+    transform: scale(1.1);
+}
+
+.left-link {
+    margin-right: auto;
+}
+
+.nav-left-group {
+    margin-right: auto; 
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.content-wrapper {
+    flex: 1;
+    display: flex;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    gap: 20px;
+}
+
+.main {
+    flex: 1;
+    padding: 30px;
+    min-height: 50vh;
+}
+
+.footer {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8B5A2B;
+    margin-top: auto;
+    margin-bottom: 30px;
+}
+
+input[type="tel"] {
+    text-align: right;
+    direction: rtl;
+}
+
+input[type="tel"]::placeholder {
+    text-align: right;
+    direction: rtl;
+}
+
+#modalBody { white-space: pre-line; }
+
+@media (max-width: 1024px) {
+    .content-wrapper {
+        flex-direction: column; 
+        width: 95%;
+    }
+
+    .main, .sidebar, .sidebar-sticky {
+        width: 100% !important;
+        flex: none;
+    }
+
+    .nav {
+        flex-wrap: wrap; 
+        justify-content: center;
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .nav-links {
+        flex: 1 1 45%; 
+        text-align: center;
+        background-color: rgba(139, 90, 43, 0.05);
+        border: 1px solid rgba(139, 90, 43, 0.1);
+        padding: 10px 5px;
+    }
+
+    .nav-left-group {
+        margin-right: 0;
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
+        border-top: 1px solid rgba(139, 90, 43, 0.1);
+        padding-top: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        height: auto;
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .logo-image {
+        height: 80px;
+        margin: 0 auto;
+    }
+
+    .user-controls {
+        margin-right: 0;
+        margin-bottom: 5px;
+        justify-content: center;
+    }
+
+    .slogan {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-links {
+        flex: 1 1 100%; 
+    }
+
+    .logo-image {
+        height: 60px;
+    }
+}

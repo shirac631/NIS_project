@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <title>הזמנת משלוח | NIS Restaurant</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/global.css" rel="stylesheet" type="text/css">
+  <link href="/css/delivery.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <%- include('includes/header') %>
+    <%- include('includes/navbar') %>
+
+
+
+  <div class="content-wrapper">
+    <main class="main">
+
+      <section class="delivery-hero">
+        <div class="hero-text">
+          <h2 class="delivery-title">הזמנת משלוח</h2>
+          <p class="delivery-subtitle">מלא פרטים, ואנחנו מוציאים את ההזמנה אלייך במהירות 🏍️</p>
+          <div class="hero-badges">
+            <span class="badge-pill">חם וטרי</span>
+            <span class="badge-pill">מהיר</span>
+            <span class="badge-pill">תשלום נוח</span>
+          </div>
+        </div>
+
+        <div class="hero-image">
+          <img src="/pictures/coffee1.jpg" alt="delivery banner" class="hero-img">
+        </div>
+      </section>
+
+      <section class="delivery-cards">
+        <div class="info-card">
+          <div class="card-icon">🔥</div>
+          <h4>מגיע חם</h4>
+          <p>אריזה איכותית ושמירה על טריות עד הדלת.</p>
+        </div>
+        <div class="info-card">
+          <div class="card-icon">⏱️</div>
+          <h4>מהיר ופשוט</h4>
+          <p>ממלאים פרטים, מאשרים — וזה בדרך אלייך.</p>
+        </div>
+        <div class="info-card">
+          <div class="card-icon">💳</div>
+          <h4>תשלום נוח</h4>
+          <p>מזומן / אשראי לשליח / Bit — מה שנוח לך.</p>
+        </div>
+      </section>
+
+      <section class="delivery-layout">
+        <form id="deliveryForm" class="delivery-form" action="/save_delivery" method="POST" novalidate>
+
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="fullName">שם מלא</label>
+              <input type="text" id="fullName" name="fullName" class="form-control" required minlength="2" maxlength="50">
+              <small class="error" id="errFullName"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">טלפון</label>
+              <input type="text" id="phone" name="phone" class="form-control" required placeholder="05XXXXXXXX">
+              <small class="error" id="errPhone"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="city">עיר</label>
+              <input type="text" id="city" name="city" class="form-control" required maxlength="30">
+              <small class="error" id="errCity"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="street">רחוב</label>
+              <input type="text" id="street" name="street" class="form-control" required maxlength="50">
+              <small class="error" id="errStreet"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="houseNumber">מס’ בית</label>
+              <input type="number" id="houseNumber" name="houseNumber" class="form-control" required maxlength="10">
+              <small class="error" id="errHouse"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="apartment">דירה (אופציונלי)</label>
+              <input type="text" id="apartment" name="apartment" class="form-control" maxlength="10">
+            </div>
+
+            <div class="form-group">
+              <label for="deliveryTime">שעת משלוח מועדפת</label>
+              <input type="time" id="deliveryTime" name="deliveryTime" class="form-control" required>
+              <small class="error" id="errTime"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="paymentMethod">אמצעי תשלום</label>
+              <select id="paymentMethod" name="paymentMethod" class="form-select" required>
+                <option value="">בחר</option>
+                <option value="cash">מזומן</option>
+                <option value="card">אשראי (שליח)</option>
+                <option value="bit">Bit</option>
+              </select>
+              <small class="error" id="errPay"></small>
+            </div>
+
+            <div class="form-group form-group-full">
+              <label for="orderDetails">מה להזמין?</label>
+              <textarea
+                id="orderDetails"
+                name="orderDetails"
+                class="form-control"
+                rows="4"
+                required
+                maxlength="500"
+                placeholder="לדוגמה: פסטה שמנת פטריות + סלט יווני + קפה קר..."
+              ></textarea>
+              <small class="error" id="errOrder"></small>
+            </div>
+
+            <div class="form-group form-group-full">
+              <label for="notes">הערות (אופציונלי)</label>
+              <textarea
+                id="notes"
+                name="notes"
+                class="form-control"
+                rows="3"
+                maxlength="300"
+                placeholder="קוד כניסה / קומה / בלי בצל / אלרגיות..."
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button type="submit" class="delivery-submit">
+              <span class="btn-text">שליחת הזמנה</span>
+              <span class="btn-icon">🏍️</span>
+            </button>
+
+            <a href="/" class="btn btn-outline-secondary delivery-btn">חזרה לדף הבית</a>
+          </div>
+        </form>
+
+        <aside class="delivery-side">
+          <div class="preview-box">
+            <h4>סיכום ההזמנה שלך</h4>
+            <p class="preview-hint">כאן תראה תמיד מה כתבת ב״מה להזמין״:</p>
+            <div id="orderPreview" class="preview-content">עדיין לא הוזן פירוט הזמנה…</div>
+          </div>
+
+          <div class="mini-gallery">
+            <img src="/pictures/coffee2.jpg" alt="gallery 1" class="mini-img">
+            <img src="/pictures/coffee3.jpg" alt="gallery 2" class="mini-img">
+            <img src="/pictures/coffee4.jpg" alt="gallery 3" class="mini-img">
+          </div>
+
+          <div class="side-note">
+            <div class="side-note-icon">📍</div>
+            <div>
+              <strong>טיפ קטן:</strong>
+              <div>אם יש אלרגיות — כתוב בהערות.</div>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+    </main>
+  </div>
+
+    <%- include('includes/footer') %>
+    <%- include('includes/popup') %>
+
+  <div id="deliveryOverlay" class="delivery-overlay" aria-hidden="true">
+    <div class="overlay-card">
+      <div class="overlay-title">ההזמנה יצאה לדרך!</div>
+      <div class="overlay-sub">רק רגע… השליח כבר על האופנוע 🏍️</div>
+      <div class="bike-track">
+        <div class="bike">🏍️</div>
+      </div>
+    </div>
+  </div>
+
+  <script>isUserLoggedIn = <%= typeof isLoggedIn !== 'undefined' ? isLoggedIn : false %>;</script> 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="/js/delivery.js"></script>
+  <script src="/js/global.js"></script>
+
+</body>
+</html>

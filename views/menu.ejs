@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>תפריט - NIS Restaurant</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/global.css" rel="stylesheet" type="text/css">
+    <link href="/css/menu.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <%- include('includes/header') %>
+    <%- include('includes/navbar') %>
+
+    <div class="content-wrapper">
+        <main class="main">
+            <div class="menu-wrapper">
+                
+                <h2 class="main-title text-center">התפריט שלנו</h2>
+
+                <div class="menu-filters text-center mb-5">
+                    <button class="filter-btn active" data-filter="all">הכל</button>
+                    <button class="filter-btn" data-filter="breakfast">ארוחת בוקר</button>
+                    <button class="filter-btn" data-filter="starters">מנות פתיחה</button>
+                    <button class="filter-btn" data-filter="salads">סלטים</button>
+                    <button class="filter-btn" data-filter="breads">סנדוויצ'ים וטוסטים</button>
+                    <button class="filter-btn" data-filter="pizza">פיצות</button>
+                    <button class="filter-btn" data-filter="pasta">פסטה</button>
+                    <button class="filter-btn" data-filter="main">עיקריות</button>
+                </div>
+
+                <div class="menu-section category-breakfast">
+                    <h2>ארוחת בוקר</h2>
+                    <div class="menu-item"><h3>ארוחת בוקר ישראלית | 84/154</h3><p>שתי ביצים לבחירה, סלט טרי קצוץ, מטבלים, חמאה, ריבה ביתית ולחם הבית. מוגש עם מיץ ומשקה חם.</p></div>
+                    <div class="menu-item"><h3>לאחר הגשם | 69</h3><p>פטריות מוקפצות עם חלומי ועשבי תיבול, מוגש על לחם צרפתי, ביצים מטוגנות וסלט ירוק.</p></div>
+                    <div class="menu-item"><h3>ארוחת בוקר איטלקית | 68</h3><p>ביצים מקושקשות עם פטריות מוקפצות, פטריות כמהין ופרמזן על פולנטה צרובה. מוגש עם פוקצ'ה וסלט ירוק.</p></div>
+                    <div class="menu-item"><h3>ארוחת בוקר כפרית | 69</h3><p>חביתה עם עשבי תיבול ופטה, פלאפל תרד, ופרמזן על בסיס גבינת שמנת עם עשבי תיבול, ירקות שורש מתובלים, סלט חציל צלוי, סלט קצוץ ופוקצ'ה זעתר.</p></div>
+                    <div class="menu-item"><h3>קרואסון סלט ביצים | 67</h3><p>קרואסון חמאה ממולא בסלט ביצים, עגבנייה ופרמזן. מוגש עם סלט ירוק.</p></div>
+                </div>
+
+                <div class="menu-section category-starters">
+                    <h2>מנות פתיחה</h2>
+                    <div class="menu-item"><h3>פוקצ'ה עם מטבלים | 42</h3></div>
+                    <div class="menu-item"><h3>פוקצ'ה שום ומוצרלה | 34</h3></div>
+                    <div class="menu-item"><h3>ארנצ'יני | 54</h3><p>מוגש עם רוטב עגבניות, פרמזן ורוקט.</p></div>
+                    <div class="menu-item"><h3>פלאפל תרד עם פרמזן | 49</h3></div>
+                    <div class="menu-item"><h3>פרחי כרובית מצופים | 54</h3></div>
+                    <div class="menu-item"><h3>מרק (עונתי) | 41</h3><p>מוגש עם לחם הבית וחמאה.</p></div>
+                    <div class="menu-item"><h3>צ'יפס | 29</h3></div>
+                    <div class="menu-item"><h3>צ'יפס יווני | 36</h3></div>
+                </div>
+
+                <div class="menu-section category-salads">
+                    <h2>סלטים</h2>
+                    <p class="subtitle">מוגש עם לחם הבית וחמאה</p>
+                    <div class="menu-item"><h3>סלט ישראלי | 67</h3><p>מלפפון, עגבנייה, כרוב, זיתים קלמטה, בצל סגול, עשבי תיבול, קרוטונים, גבינת פטה, טחינה גולמית ומתובלים בשמן זית ולימון.</p></div>
+                    <div class="menu-item"><h3>סלט טונה | 68</h3><p>ביצה קשה, שעועית ירוקה, חסה, עלי תינוקות, כרוב, מלפפון, עגבניות שרי, גזר ובצל סגול, עם רוטב לימון איולי.</p></div>
+                    <div class="menu-item"><h3>סלט חלומי | 74</h3><p>גבינת חלומי, בטטה מתוקה פריכה, שקדים ואגוזים, מלפפון, עגבניות שרי, כרוב, חסה, עלי תינוקות, פלפלים, גזר ורוטב ויניגרט.</p></div>
+                    <div class="menu-item"><h3>סלט קיסר | 74</h3><p>חסה, עגבניות שרי, אבוקדו, קרוטונים, בצל סגול וגבינת עזים מצופה פריך, מוגש עם רוטב קיסר ופרמזן.</p></div>
+                    <div class="menu-item"><h3>סלט הבית | 72</h3><p>בטטה ופטריות מוקפצות, חסה, עלי תינוקות, עגבניות שרי, קרוטונים, גבינת פטה ובטטה פריכה, מתובלים בשמן זית ולימון.</p></div>
+                    <div class="menu-item"><h3>סלט בריאות | 72</h3><p>מלפפון, עגבניות שרי, חסה ועלי תינוקות, גזר, פטריות טריות, בטטה, שקדים ואגוזים, קרוטונים, גבינת פטה מגוררת ורוטב ויניגרט.</p></div>
+                </div>
+
+                <div class="menu-section category-breads">
+                    <h2>סנדוויצ'ים וטוסטים</h2>
+                    <p class="subtitle">מוגש עם סלט ירוק או קצוץ</p>
+                    <div class="menu-item"><h3>סנדוויץ' גבינה צהובה | 49</h3><p>גבינה צהובה, חמאה, עגבנייה וחסה על צ'בטה לבנה.</p></div>
+                    <div class="menu-item"><h3>סנדוויץ' חביתה | 49</h3><p>חביתה עם עשבי תיבול, חסה, עגבנייה ורוטב לימון איולי על צ'בטה דגנים מלאים.</p></div>
+                    <div class="menu-item"><h3>סנדוויץ' סלט ביצים | 56</h3><p>סלט ביצים, חסה ועגבנייה על לחם צרפתי.</p></div>
+                    <div class="menu-item"><h3>סנדוויץ' אבוקדו | 59</h3><p>אבוקדו טרי, עגבניות, רוקט ורוטב לימון איולי על לחם דגנים מלאים.</p></div>
+                    <div class="menu-item"><h3>סנדוויץ' טונה | 56</h3><p>טונה, ביצה קשה ועלי תינוקות עם רוטב ויניגרט על צ'בטה לבנה.</p></div>
+                    <div class="menu-item"><h3>סנדוויץ' סלמון | 65</h3><p>גבינת שמנת, סלמון מעושן, בצל סגול ועלי תינוקות על צ'בטה לבנה.</p></div>
+                    <div class="menu-item"><h3>טוסט הבית</h3><p>גבינה צהובה, פטה, עגבנייה, זיתים, בצל סגול ורוטב ויניגרט על לחם צרפתי.</p></div>
+                    <div class="menu-item"><h3>טוסט איטליה | 61</h3><p>גבינת עזים, גאודה, פרמזן, פטריות, רוטב פסטו ועגבנייה על לחם צרפתי.</p></div>
+                </div>
+
+                <div class="menu-section category-pizza">
+                    <h2>פיצות</h2>
+                    <p class="subtitle">אפוי בתנור אבן</p>
+                    <div class="menu-item"><h3>פיצה מרגריטה | 65</h3><p>פיצה עם רוטב עגבניות וגבינת מוצרלה.</p></div>
+                    <div class="menu-item"><h3>פיצה הבית | 69</h3><p>גבינת מוצרלה, רוטב עגבניות, פלפלים, פטריות, בצל סגול וזיתי קלמטה.</p></div>
+                    <div class="menu-item"><h3>פיצה בצל מקורמל | 69</h3><p>רוטב עגבניות, גבינת מוצרלה, בצל מקורמל, פטה ועלים ירוקים.</p></div>
+                </div>
+
+                <div class="menu-section category-pasta">
+                    <h2>פסטה</h2>
+                    <div class="menu-item"><h3>פסטה אלי אוליו (המיוחד של שירה!) | 64</h3><p>שמן זית, שום, פטרוזיליה, צ'ילי גרוס, זיתי קלמטה ופרמזן.</p></div>
+                    <div class="menu-item"><h3>פסטה פרימאברה | 69</h3><p>פוזילי סרדיני עם רוטב שמן זית, קישואים צרובים, שעועית ירוקה, עגבניות שרי, אפונה, ברוקולי, צנוברים ופרמזן.</p></div>
+                    <div class="menu-item"><h3>פוזילי סרדיני עם עגבנייה | 59</h3><p>רוטב העגבניות המיוחד של מסעדת NIS מסרדיניה.</p></div>
+                    <div class="menu-item"><h3>ברוקולי רוזה | 69</h3><p>פוזילי סרדיני ברוטב רוזה עם מוצרלה וברוקולי.</p></div>
+                    <div class="menu-item"><h3>קצ'יו e פפה | 68</h3><p>פסטה ירוקה ברוטב אלפרדו, פרמזן, בצל קלוי, אפונה ופלפל שחור טחון.</p></div>
+                    <div class="menu-item"><h3>פסטה ירוקה עם פונגי | 74</h3><p>פסטה ירוקה ברוטב שמנת, פטריות קלויות ופרמזן.</p></div>
+                    <div class="menu-item"><h3>פסטה ירוקה עם סלמון | 84</h3><p>פסטה ירוקה ברוטב פסטו שמנת עם ברוקולי, קוביות סלמון, שקדים ופרמזן.</p></div>
+                    <div class="menu-item"><h3>אנלוטי גבינה | 78</h3><p>ברוטב אלפרדו עם קישואים, תרד וצנוברים קלויים.</p></div>
+                    <div class="menu-item"><h3>רביולי בטטה | 76</h3><p>ברוטב רוזה.</p></div>
+                    <div class="menu-item"><h3>ניוקי פטריות וערמונים | 76</h3><p>ברוטב אלפרדו עם פטריות, ערמונים וכמהין.</p></div>
+                </div>
+
+                <div class="menu-section category-main">
+                    <h2>מנות עיקריות</h2>
+                    <div class="menu-item"><h3>פוטטו גראטן | 72</h3><p>תפוח אדמה אפוי ברוטב שמנת ופטריות, בצל מטוגן, מוצרלה, מוגש עם סלט ירוק.</p></div>
+                    <div class="menu-item"><h3>פיש & צ'יפס | 79</h3><p>מוגש עם צ'יפס ורוטב לימון איולי.</p></div>
+                    <div class="menu-item"><h3>קערת סלמון | 89</h3><p>קוביות סלמון ברוטב טריאקי, מוגש עם אורז מטוגן עם ברוקולי וקישואים.</p></div>
+                    <div class="menu-item"><h3>פילה סלמון אפוי | 104</h3><p>מוגש עם שעועית ירוקה וסלט ירוק.</p></div>
+                </div>
+
+                <div class="menu-section">
+                    <h2>קינוחים</h2>
+                    <div class="menu-item"><h3>פודינג שוקולד | 51</h3><p>עוגת שוקולד חמה עם כדור גלידת וניל וקצפת.</p></div>
+                    <div class="menu-item"><h3>וופל בלגי | 59</h3><p>וופל בלגי חם עם גלידת וניל, שוקולד, קצפת, פקאן ופירות יער.</p></div>
+                </div>
+
+                <p id="vegan">שאל את המלצר/ית על מנות טבעוניות.</p>
+            </div>
+        </main>
+
+        <aside class="sidebar-sticky">
+            <div class="video-container">
+                <video autoplay muted loop playsinline class="side-video">
+                    <source src="/videos/pancake.mp4" type="video/mp4">
+                </video>
+            </div>
+        </aside>
+    </div>
+
+    <%- include('includes/footer') %>
+    <%- include('includes/popup') %>
+
+    <script src="/js/global.js"></script>
+    <script src="/js/menu.js"></script>
+</body>
+</html>

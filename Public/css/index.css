@@ -1,0 +1,104 @@
+
+.main {
+    flex: 3;
+    padding: 30px;
+}
+
+.sidebar {
+    flex: 1;
+    padding: 25px;
+    text-align: center;
+    color: #8B5A2B;
+    background-color: #fdfaf7;
+    border-radius: 15px;
+}
+
+.greeting-container {
+    text-align: right;
+    padding-right: 10px;
+    margin-bottom: 5px;
+}
+
+#greeting-text {
+    font-size: 1rem;
+    color: #a67c52;
+    font-weight: 500;
+}
+
+.dynamic-greeting {
+    display: inline-block;
+    animation: fadeInWelcome 1s ease-in-out forwards;
+}
+
+@keyframes fadeInWelcome {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.main-title {
+    color: #8B5A2B;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.about-us {
+    text-align: center;
+    color: #5d3a1a;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.image-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.img {
+    width: 180px;
+    height: 180px;
+    border-radius: 15px;
+    object-fit: cover;
+    transition: transform 0.3s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.img:hover { 
+    transform: scale(1.05); 
+}
+
+.hh-deals { 
+    list-style: none; 
+    padding: 0; 
+    margin-top: 15px; 
+}
+
+@media (max-width: 1024px) {
+    .main, .sidebar {
+        flex: none;
+        width: 100%;
+    }
+
+    .image-gallery {
+        flex-wrap: wrap;
+    }
+    
+    .img {
+        width: calc(50% - 15px);
+        height: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    .image-gallery { flex-wrap: wrap; }
+    .img { width: 45%; }
+}
+
+@media (max-width: 480px) {
+    .img {
+        width: 100%;
+    }
+}

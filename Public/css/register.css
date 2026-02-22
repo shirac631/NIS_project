@@ -1,0 +1,85 @@
+
+.login-container-box {
+    border: 2px solid #8B5A2B;
+    border-radius: 20px;
+    padding: 35px;
+    background-color: rgba(255, 255, 255, 0.4);
+    width: 100%;
+    max-width: 450px; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    margin: 20px auto;
+}
+
+.register-box {
+    max-width: 600px;
+}
+
+.text-end {
+    text-align: right !important;
+}
+
+.form-label {
+    text-align: right;
+    width: 100%;
+    display: block;
+    margin-bottom: 8px;
+    color: #5d3a1a;
+    font-weight: bold;
+}
+
+.custom-input {
+    border-radius: 12px !important;
+    border: 1px solid #8B5A2B !important;
+    text-align: right;
+    padding-left: 40px !important; 
+}
+
+.toggle-password {
+    position: absolute;
+    left: 12px;
+    top: 42px; 
+    cursor: pointer;
+    color: #8B5A2B;
+    z-index: 10;
+}
+
+.register-eye-icon {
+    left: 25px;
+    top: 40px; 
+}
+
+.login-btn-custom {
+    background-color: #8B5A2B !important;
+    color: white !important;
+    border-radius: 12px !important;
+    font-weight: bold !important;
+    padding: 12px !important;
+    transition: background-color 0.3s;
+    border: none;
+    width: 100%;
+}
+
+.login-btn-custom:hover {
+    background-color: #5d3a1a !important;
+}
+
+.register-btn {
+    margin-top: 15px;
+}
+
+
+@media (max-width: 768px) {
+    .login-container-box {
+        padding: 20px;
+        width: 95%;
+        margin: 10px auto;
+    }
+
+    .register-box {
+        max-width: 95%; 
+    }
+
+    .register-eye-icon {
+        left: 20px; 
+    }
+}

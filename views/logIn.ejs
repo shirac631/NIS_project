@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <title>NIS Restaurant - התחברות</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="/css/global.css" rel="stylesheet" type="text/css">
+    <link href="/css/login.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <%- include('includes/header') %>
+    <%- include('includes/navbar') %>
+
+    <div class="content-wrapper">
+        <main class="main">
+            <div class="login-container-box">
+                <h2 class="text-center mb-4">התחברות</h2>
+                
+                <form action="/check_login" method="POST">
+                    <div class="mb-3">
+                        <label for="fullName" class="form-label">שם משתמש (שם פרטי ומשפחה)</label>
+                        <input type="text" class="form-control custom-input" id="fullName" name="fullName" placeholder="הזינו שם מלא כפי שנרשמתם" required>
+                    </div>
+                    <div class="mb-3 position-relative">
+                        <label for="password" class="form-label">סיסמה</label>
+                        <input type="password" class="form-control custom-input" id="password" name="password" required>
+                        <i class="fas fa-eye toggle-password" id="togglePass"></i>
+                    </div>
+                    <button type="submit" class="login-btn-custom">כניסה</button>
+                </form>
+
+                <p class="mt-3 text-center">עדיין לא חברים? <a href="/register">הרשמו כאן</a></p>
+            </div>
+        </main>
+    </div>
+
+    <%- include('includes/footer') %> 
+    <%- include('includes/popup') %>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/login.js"></script>
+    <script src="/js/global.js"></script>
+</body>
+</html>
